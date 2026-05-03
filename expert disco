@@ -1,51 +1,56 @@
 # Your Guide to Confidence: Public Speaking
 # Group members: Ambrielle June Correos, Sean Joland Emmanueal Lozada, Dennis Bosco Yu
-# description: This website will allow individuals to test their confidence in public speaking. After answering some wquestions, a short but helpful result will be given to help improve their public spewking skills.
+# description: This website will allow individuals to test their confidence in public speaking. After answering some questions, a short but helpful result will be given to help improve their public speaking skills.
 # -----------------------------------------------
 
 def ask_question(q):
     while True:
         answer = input(q + " (yes/no): ").lower()
-        if answer == "yes":
-            return 1
-        elif answer == "no":
-            return 0
+        if answer in ["yes", "no"]:
+            return answer
         else:
-            print("Please don't mess around, just answer yes or no.")
-
-def score_evaluation(score):
-    print("\nResults:")
-    if score <= 3:
-        print("You might not feel confident when speaking in front yet...")
-        print("Try this:")
-        print("- Practice in front of a mirror")
-        print("- Practice with your friends")
-        print("- Prepare more before speaking")
-    elif score <= 6:
-        print("You're somewhat okay but still need improvement!")
-        print("Tips:")
-        print("- Work on eye contact")
-        print("- Record yourself practicing")
-        print("- Observe people talking in front")
-    elif score <= 10:
-        print("Congrats! You are very confident when speaking in front!")
-        print("Tips:")
-        print("- Keep practicing your presentation")
-        print("- Practice with others")
-    else:
-        print("Invalid score, try again.")
-
-# ---------- MAIN PROGRAM ----------
-score = 0
+            print("Please answer yes or no.")
 
 print("Please answer honestly 🙂\n")
 
-score += ask_question("Do you shiver when you go up to speak in front?")
-score += ask_question("Do you look up at the ceiling when speaking?")
-score += ask_question("Do you forget some lines when presenting?")
-score += ask_question("Do you avoid eye contact with the crowd?")
-score += ask_question("Do you feel nervous before presenting?")
-score += ask_question("Do you speak clearly and confidently?")
-score += ask_question("Do you practice before presenting?")
+tips = []
 
-score_evaluation(score)
+# Negative habits (YES = problem)
+if ask_question("Do you shiver when speaking?") == "yes":
+    tips.append("Practice in front of a mirror to reduce nervous movements.")
+
+if ask_question("Do you look at the ceiling when speaking?") == "yes":
+    tips.append("Work on maintaining eye contact with your audience.")
+
+if ask_question("Do you forget lines when presenting?") == "yes":
+    tips.append("Practice your speech multiple times before presenting.")
+
+if ask_question("Do you avoid eye contact with the audience?") == "yes":
+    tips.append("Try looking at different people in the audience while speaking.")
+
+if ask_question("Do you feel nervous before presenting?") == "yes":
+    tips.append("Take deep breaths and relax before going on stage.")
+
+# Positive habits (NO = problem)
+if ask_question("Do you speak clearly and confidently?") == "no":
+    tips.append("Practice speaking slowly and clearly.")
+
+if ask_question("Do you practice before presenting?") == "no":
+    tips.append("Always rehearse your presentation beforehand.")
+
+# Default/general tips (used if needed)
+default_tips = [
+    "Keep practicing regularly to build confidence.",
+    "Stay calm and take deep breaths before speaking.",
+    "Focus on your message, not your fear."
+]
+
+# Ensure EXACTLY 3 tips
+for default in default_tips:
+    if len(tips) < 3 and default not in tips:
+        tips.append(default)
+
+# ---------- OUTPUT ----------
+print("\nHelpful Tips:")
+for i in range(3):
+    print(f"- {tips[i]}")
