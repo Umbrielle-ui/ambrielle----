@@ -1,0 +1,46 @@
+# Your Guide to Confidence: Public Speaking
+# Group members: Ambrielle June Correos, Sean Joland Emmanueal Lozada, Dennis Bosco Yu
+# description: This website will allow individuals to test their confidence in public speaking. After answering some wquestions, a short but helpful result will be given to help improve their public spewking skills.
+# -----------------------------------------------
+
+def ask_question(q) 
+    while True:  # loop: keeps asking until answer is valid
+        answer = input( q + "(yes/no): ")
+        if answer == "yes"
+            return 1
+        elif answer == "no"
+            return 0
+        else:
+            print("Please dont mess around, just answer yes or no") # repeats if invalid 
+            
+def score_evaluation(score)
+    print("results:")
+        if score <= 3:
+            print("you might not feel confident when speaking in front yet...")
+            print("try this:")
+            print("- practice in front of a mirror")
+            print("- practice with your friendss")
+            print("- prepare more before speaking")
+        elif score <= 6:
+            print("Your somewhat okay but still needs improvment!")
+            print("Tips:")
+            print("- work on eye contact")
+            print("- record yourself practicing")
+            print("- observe people taking in front")
+        elif score <= 10 
+            print("Congrats! you are very confident when speaking in front!")
+            print("tips:")
+            print("- Keep practicing your presentation")
+            print("- Practice with others")
+        else :
+            print("Invalid score, try again.)
+
+# ----------MAIN PROGRAM----------
+score = 0 
+
+print("please answer honestly 🙂")
+    input(print("Do you shiver when you go up to speak in front? [yes/no?]"))
+    input(print("Do you look up to the ceiling when you speak in front? [yes/no?]"))
+    input(print("Do you tend to forget some lines when presenting? [yes/no?]"))
+    input(print("Do you avoid eye contact with the crowd? [yes/no?]"))
+    input(print("? [yes/no?]"))
